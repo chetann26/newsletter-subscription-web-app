@@ -28,10 +28,10 @@ app.post("/",function(req,res){
         ]
     };
     const jsonData=JSON.stringify(data);
-    const url="https://us17.api.mailchimp.com/3.0/lists/e6280019ca "
+    const url="https://us17.api.mailchimp.com/3.0/lists/{your list id} "
     const options= {
         method:"POST",
-        auth: "cadet26:e9a34aaf3287d4906413c9be6539a9e0-us17"
+        auth: "cadet26:{your api key}"
     }
     const request=https.request(url,options,function(response){
           response.on("data",function(data){
@@ -53,5 +53,3 @@ app.listen(process.env.PORT || 3000,function(){
     console.log("server listening at port 3000");
 });
 
-// api key : e9a34aaf3287d4906413c9be6539a9e0-us17
-//list id: e6280019ca. or 1356092
